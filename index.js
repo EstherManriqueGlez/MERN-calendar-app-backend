@@ -1,8 +1,16 @@
 const express = require('express');
+const dns = require('dns');
+const { dbConnection } = require('./database/config');
 require('dotenv').config();
+
+// Los DNS de la red local rechazan las consultas SRV que necesita MongoDB Atlas
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 // Crear el servidor de Express
 const app = express();
+
+// Data Base
+dbConnection();
 
 //Directorio Público
 app.use(express.static('public'));

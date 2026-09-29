@@ -19,7 +19,7 @@ router.post(
     check('password', 'The password must be 6 characters long').isLength({
       min: 6,
     }),
-    validateFields
+    validateFields,
   ],
   createUser,
 );
@@ -31,7 +31,7 @@ router.post(
     check('password', 'The password must be 6 characters long').isLength({
       min: 6,
     }),
-    validateFields
+    validateFields,
   ],
   loginUser,
 );
