@@ -1,5 +1,6 @@
 const express = require('express');
 const dns = require('dns');
+const cors = require('cors');
 const { dbConnection } = require('./database/config');
 require('dotenv').config();
 
@@ -11,6 +12,9 @@ const app = express();
 
 // Data Base
 dbConnection();
+
+// CORS
+app.use(cors());
 
 //Directorio Público
 app.use(express.static('public'));
