@@ -24,7 +24,8 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', require('./routes/auth'));
-// CRUD de eventos (crear, leer, actualizar, eliminar)
+app.use('/api/events', require('./routes/events'));
+
 
 // Escuchar peticiones en el puerto 4000
 app.listen(process.env.PORT, () => {
